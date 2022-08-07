@@ -9,6 +9,10 @@
 <p>
   This repository is a form of original AdminLTE project. It is aim to use AdminLTE template with React.
 </p>
+
+<p>
+  This repository is a frontend For <a href="https://github.com/madukubah/link-shortener" >URL Shortener backend</a>
+</p>
 <br>
 
 <br>
