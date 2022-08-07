@@ -65,7 +65,7 @@ const VisitorChart = ({short}: any) => {
               }) ,
               datasets: [
                 {
-                  label: 'Link',
+                  label: 'Clicks',
                   data: data.map((item)=> item.count),
                   backgroundColor: '#f7813e',
                   

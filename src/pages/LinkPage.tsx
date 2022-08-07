@@ -6,12 +6,13 @@
 /* eslint-disable no-nested-ternary */
 /* eslint-disable react/no-array-index-key */
 import React from 'react';
-import {ContentHeader} from '@components';
+import {ContentHeader, Button} from '@components';
 import {useSelector} from 'react-redux';
+import {CopyToClipboard} from 'react-copy-to-clipboard';
 import {useQuery} from "react-query";
+import {toast} from 'react-toastify';
 import {getLink} from '@app/services/link';
 import Spinner from 'react-bootstrap/Spinner';
-import GenerateLink from '@modules/generate-link/GenerateLink';
 import {ModalLinkDelete, VisitorChart, ModalLinkDetail} from '@modules/link';
 
 const LinkPage = () => {
@@ -76,11 +77,30 @@ const LinkPage = () => {
                             return(
                               <tr key={index}>
                                 <td>{index+1}</td>
-                                {
+                                {/* {
                                   Object.keys(linkTableHeader).map(function(key) {
                                     return(<td>{item[key]}</td>);
                                   })
-                                }
+                                } */}
+                                <td>
+                                  {item.host_short} 
+                                  {/* <input value={this.state.value}
+                                    onChange={({target: {value}}) => this.setState({value, copied: false})} /> */}
+
+                                  <CopyToClipboard text={item.host_short}
+                                    onCopy={() => {
+                                      toast.success('Copied!');
+                                    }}>
+                                    <Button
+                                      className="btn btn-sm btn-info float-right"
+                                    >
+                                      {/* @ts-ignore */}
+                                      <i className="nav-icon fas fa-copy"/>
+                                    </Button>
+                                  </CopyToClipboard>
+                                  
+                                </td>
+                                <td>{item.redirect}</td>
                                 <td>
                                   <ModalLinkDetail item={item} name="Detail"/>
                                   {" "}
