@@ -38,6 +38,9 @@ const FormItem = ({formItem, onChangeValue}:FormProps) => {
   useEffect(() => {
     setValue(formItem.value);
   }, [value, formItem]);
+  
+  if( formItem.type ==='hidden' )
+    return (<input onChange={(e)=>handleFormItem(e)} type={formItem.type} className={`form-control ${formItem.className}`} id={formItem.id} value={value}/>);
 
   return (
     <>

@@ -5,6 +5,7 @@
 /* eslint-disable  react/no-unused-prop-types */
 /* eslint-disable  react/no-unused-state */
 /* eslint-disable  react/state-in-constructor */
+/* eslint-disable  jsx-a11y/anchor-is-valid */
 import React from 'react';
 import {useSelector} from 'react-redux';
 import {Link} from 'react-router-dom';
@@ -18,13 +19,13 @@ export interface IMenuItem {
 }
 
 export const MENU: IMenuItem[] = [
-  {
-    name: 'menusidebar.label.dashboard',
-    path: '/'
-  },
+  // {
+  //   name: 'menusidebar.label.dashboard',
+  //   path: '/'
+  // },
   {
     name: 'All Links',
-    path: '/all-link',
+    path: '/',
     icon: 'fa-link'
   }
 ];
@@ -44,7 +45,7 @@ const MenuSidebar = () => {
             className="brand-image img-circle elevation-3"
             style={{opacity: '.8'}}
           />
-          <span className="brand-text font-weight-light">AdminLTE 3</span>
+          <span className="brand-text font-weight-light">URL Shortener</span>
         </Link>
         <div className="sidebar">
           <div className="user-panel mt-3 pb-3 mb-3 d-flex">
@@ -56,7 +57,7 @@ const MenuSidebar = () => {
               />
             </div>
             <div className="info">
-              <Link to="/profile" className="d-block">
+              <Link to="#" className="d-block">
                 {user.email}
               </Link>
             </div>

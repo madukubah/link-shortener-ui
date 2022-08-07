@@ -13,6 +13,7 @@ import MenuItem from './menu-item/MenuItem';
 import Checkbox from './checkbox/Checkbox';
 import Select from './select/Select';
 import Modal from './modal/Modal';
+import ModalContent from './modal/ModalContent';
 import Form from './form/Form';
 
 export {
@@ -24,5 +25,6 @@ export {
     Checkbox,
     Select,
     Modal,
+    ModalContent,
     Form
 };

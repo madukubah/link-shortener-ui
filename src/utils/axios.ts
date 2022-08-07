@@ -3,7 +3,8 @@ import store from '@store/store';
 import {logoutUser} from '@store/reducers/auth';
 
 const intance = axios.create({
-  baseURL: `${process.env.REACT_APP_GATEKEEPER_URL}`
+  // baseURL: `http://localhost:3400`
+  baseURL: `${process.env.REACT_APP_BASE_URL}`
 });
 
 intance.interceptors.request.use(
