@@ -2,6 +2,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/interactive-supports-focus */
+/* eslint-disable prettier/prettier */
 import React, {useEffect, useState} from 'react';
 import {NavLink, useNavigate, useLocation, Location} from 'react-router-dom';
 import {useTranslation} from 'react-i18next';
@@ -71,7 +72,7 @@ const MenuItem = ({menuItem}: {menuItem: IMenuItem}) => {
         onClick={handleMainMenuAction}
         style={{cursor: 'pointer'}}
       >
-        <i className="nav-icon fas fa-tachometer-alt" />
+        <i className={`nav-icon fas ${menuItem.icon? menuItem.icon : 'fa-tachometer-alt' }`} />
         <p>{t(menuItem.name)}</p>
         {isExpandable ? <i className="right fas fa-angle-left" /> : null}
       </a>

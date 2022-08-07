@@ -1,3 +1,8 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable no-unused-vars */
+/* eslint-disable prettier/prettier */
+/* eslint-disable prefer-const */
+/* eslint-disable object-shorthand */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
@@ -5,11 +10,15 @@ import {toast} from 'react-toastify';
 import {Gatekeeper} from 'gatekeeper-client-sdk';
 import App from '@app/App';
 import store from '@store/store';
+import Chart from 'chart.js/auto';
+import {CategoryScale} from 'chart.js';
 
 import './i18n';
 import * as serviceWorker from './serviceWorker';
 
 import './index.css';
+
+Chart.register(CategoryScale);
 
 toast.configure({
   autoClose: 3000,
